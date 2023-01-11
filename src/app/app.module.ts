@@ -9,9 +9,12 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { BoutonPreviewComponent } from './bouton/bouton-preview/bouton-preview.component';
+import { CameraPreviewComponent } from './bouton/camera-preview/camera-preview.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, BoutonPreviewComponent, CameraPreviewComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,6 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatGridListModule,
     MatIconModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

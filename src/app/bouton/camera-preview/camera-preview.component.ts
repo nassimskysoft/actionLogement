@@ -1,19 +1,12 @@
 import { Component } from '@angular/core';
-
 import { Camera, CameraResultType } from '@capacitor/camera';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-camera-preview',
+  templateUrl: './camera-preview.component.html',
+  styleUrls: ['./camera-preview.component.scss'],
 })
-export class AppComponent {
-  showFiller = false;
-
-  title = 'action-logement';
-  onTest = () => {
-    console.log('hello');
-  };
+export class CameraPreviewComponent {
   takePicture = async () => {
     const image = await Camera.getPhoto({
       quality: 90,
