@@ -1,1 +1,181 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+@import "/src/app/app-data/custom-color.scss";
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$action-logement-primary: mat.define-palette($custom-primary);
+//$action-logement-accent: mat.define-palette($custom-accent, A200, A400, A400);
+$action-logement-accent: mat.define-palette($custom-accent);
+
+// The warn palette is optional (defaults to red).
+$action-logement-warn: mat.define-palette(mat.$red-palette);
+
+$action-logement-nassim: mat.define-palette($custom-primary);
+$nassim: mat.define-palette($custom-primary);
+
+$nassim300: mat.define-palette($custom-primary, A200);
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$action-logement-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $action-logement-primary,
+      accent: $action-logement-accent,
+      warn: $action-logement-warn,
+      nassim: $nassim,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($action-logement-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+//color
+.accent {
+  color: white !important;
+  &-1 {
+    color: white !important;
+    background-color: #003f7a !important;
+    &:hover {
+      background-color: #5780a8 !important;
+    }
+  }
+  &-2 {
+    color: white !important;
+    background-color: #e41d4b !important;
+    &:hover {
+      background-color: #e94a6f !important;
+    }
+  }
+  &-3 {
+    color: white !important;
+    background-color: #24195d !important;
+    &:hover {
+      background-color: #585083 !important;
+    }
+  }
+}
+
+.bleunuit {
+  color: white !important;
+  background-color: #24195d !important;
+  &:hover {
+    background-color: #585083 !important;
+  }
+}
+.black {
+  color: white !important;
+  background-color: #000000 !important;
+  &-85 {
+    color: white !important;
+    background-color: #262626 !important;
+  }
+  &-55 {
+    color: white !important;
+    background-color: #737373 !important;
+  }
+  &-60 {
+    color: white !important;
+    background-color: #666666 !important;
+  }
+  &-40 {
+    color: white !important;
+    background-color: #999999 !important;
+  }
+  &-25 {
+    color: white !important;
+    background-color: #bfbfbf !important;
+  }
+  &-15 {
+    color: white !important;
+    background-color: #d9d9d9 !important;
+  }
+  &-5 {
+    color: white !important;
+    background-color: #f2f2f2 !important;
+  }
+}
+
+.green {
+  color: white !important;
+
+  &-1 {
+    background-color: #008b6c !important;
+  }
+
+  &-2 {
+    background-color: #26a82a !important;
+  }
+  &-3 {
+    background-color: #e5f5e5 !important;
+  }
+}
+
+.red {
+  color: white !important;
+
+  &-1 {
+    background-color: #bf2222 !important;
+  }
+
+  &-2 {
+    background-color: #ff0000 !important;
+  }
+}
+.orange {
+  color: white !important;
+
+  background-color: #f39200 !important;
+  &-1 {
+    background-color: #fef7ed !important;
+  }
+}
+.bleu {
+  color: white !important;
+
+  background-color: #336595 !important;
+  &-50 {
+    background-color: #99b2ca !important;
+  }
+}
+.rose {
+  color: white !important;
+
+  background-color: #f4a4b7 !important;
+}
+
+mat-grid-tile {
+  background: lightblue !important;
+}
