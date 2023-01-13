@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BoutonPreviewComponent } from './bouton/bouton-preview/bouton-preview.component';
 import { CameraPreviewComponent } from './bouton/camera-preview/camera-preview.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [AppComponent, BoutonPreviewComponent, CameraPreviewComponent],
@@ -25,6 +26,12 @@ import { CameraPreviewComponent } from './bouton/camera-preview/camera-preview.c
     MatGridListModule,
     MatIconModule,
     MatSidenavModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
